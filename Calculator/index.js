@@ -27,11 +27,7 @@ app.get('/test/:numberid', (req, res) => {
     };
 
     https.get(apiUrl, options, (response) => {
-        let data = '';
-
-        response.on('data', (chunk) => {
-            data += chunk;
-        });
+       
 
         response.on('end', () => {
             const fetchedNumber = JSON.parse(data).number;
@@ -55,5 +51,5 @@ app.get('/test/:numberid', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`My Server is running on this port ${PORT}`);
 });
